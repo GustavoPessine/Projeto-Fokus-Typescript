@@ -5,7 +5,7 @@ Este é um projeto para Aprendizado, com ele foram aprofundados meus conheciment
 # - Imutabilidade, estado da aplicação e funções puras
 Aprendi sobre os conceitos de Imutabilidade com Spread Operator, criação do estado inicial de uma aplicação Front-End, e funções puras que recebem parâmetros e retornam algo novo, o Spread Operator é usado muito para criar itens novos a partir dos parâmetros fornecidos.
 
-# - Interface do Usuário e lógica toggle
+# - Interface do usuário e lógica toggle
 Criei e entendi como funciona UI (User Interface) e que ela aparece praticamente em todos os projetos Front-End, conheci o BEM (Block Element Modifier), uma metodologia de CSS para estilização e construção de uma interface mais legível, revisei que o DOM nasce do HTML, e aprendi a Lógica de Alternância de Estado (Toggle) baseada em Comparação de Identidade (===), que serve como um interruptor, se o usuário clicar em uma tarefa já selecionada, ela volta a ser não selecionada, e tarefas não selecionadas podem ser selecionadas ao clique, demorei para entender o Toggle, mas compreendi ao perceber que o operador relacional (===) é o centro dessa lógica.
 
 # - Gerenciamento de tarefas
