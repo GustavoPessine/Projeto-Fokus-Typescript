@@ -83,11 +83,23 @@ const atualizarUI = () => {
     formAdicionarTarefa.onsubmit = (evento) => {
         evento.preventDefault();
         const descricao = textarea.value;
-        estadoInicial = adicionarTarefa(estadoInicial, {
-            descricao,
-            concluida: false
-        });
+        if (estadoInicial.editando && estadoInicial.tarefaSelecionada) {
+            // APENAS ATUALIZA A TAREFA EXISTENTE
+            estadoInicial.tarefaSelecionada.descricao = descricao;
+        }
+        else {
+            // CRIA UMA NOVA
+            estadoInicial = adicionarTarefa(estadoInicial, {
+                descricao,
+                concluida: false
+            });
+        }
         atualizarUI();
+        // Resetar o estado após salvar
+        estadoInicial.editando = false;
+        estadoInicial.tarefaSelecionada = null;
+        formAdicionarTarefa.classList.add('hidden');
+        textarea.value = '';
     };
     btnCancelar.onclick = () => {
         formAdicionarTarefa.classList.add('hidden');
@@ -119,7 +131,7 @@ const atualizarUI = () => {
         const button = document.createElement('button');
         button.classList.add('app_button-edit');
         const editIcon = document.createElement('img');
-        editIcon.setAttribute('src', '/imagens/edit.png');
+        editIcon.setAttribute('src', './imagens/edit.png');
         button.appendChild(editIcon);
         if (tarefa.concluida) {
             button.setAttribute('disabled', 'true');
